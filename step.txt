@@ -1,2 +1,4 @@
 Step 1: init feature
 Step 2: add logic
+# Step 1: init feature - creates a file
+# Step 2: //add logic
