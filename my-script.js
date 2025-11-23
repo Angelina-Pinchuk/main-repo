@@ -1,14 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // Создаём кнопку
-    const btn = document.createElement('button');
-    btn.textContent = 'Run script';
-    btn.className = 'my-run-btn'; // назначаем определённый класс
+    function printDOMTree(node, indent = '') {
+        // Выводим текущий элемент
+        console.log(indent + node.nodeName);
 
-// Добавляем кнопку в начало body
-    document.body.insertBefore(btn, document.body.firstChild);
+        // Рекурсивно обходим дочерние узлы
+        node.childNodes.forEach(child => {
+            printDOMTree(child, indent + '  ');
+        });
+    }
 
-// Вешаем обработчик на кнопку
-    btn.addEventListener('click', () => {
-        alert('script is running');
-    });
+// Запускаем с корневого элемента документа
+    printDOMTree(document.documentElement);
+
 });
